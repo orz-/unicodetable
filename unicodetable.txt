@@ -1,6 +1,9 @@
 //本文書はLICENSE（NYSDL）の下で公開します。
 //以下の文書はさきゅばす改造版に使ったunitable.h(cのヘッダーファイル)の内容を記述したものです。
 //さきゅばすはψ氏の著作物ですが、ここに記す内容は自分orzが著作したものです。
+//参考URL:さきゅばすプロジェクト
+//saccubus home http://sourceforge.jp/projects/saccubus/
+//saccubus SVN http://sourceforge.jp/projects/saccubus/scm/svn/
 /*
  * unitable.h
  *
@@ -29,7 +32,15 @@
  L MINGLIU_FONT		(win=MingLiU) 繁字体、変化なし
  N N_MINCHO_FONT	(win7=SIMSUN XP=NGULIM) 明朝、変化なし
  E ESTRANGELO_EDESSA	シリア
- Z ZERO_WIDTH     	200b 2029-202f (No Font Griph)
+ B BENGAL_FONT   	(vrinda.ttf)Bangla lipi
+ C TAMIL_FONT 	 	(latha.ttf)Tamil
+ e LAOO_FONT		(laoui.ttf)laoo
+ f GURMKHI_FONT		(raavi.ttf)Gurmkhi
+ k KANNADA_FONT		(tunga.ttf)カナラ
+ h THAANA_FONT		(mvboli.ttf)ターナ
+ i MALAYALAM_FONT	(kartika.ttf)マラヤラム
+ I TELUGU_CHAR		(gautami.ttf)テルグ
+ Z ZERO_WIDTH     	(200b-200f)2000series 2028-202f (No Font Griph)
 
  参考資料（Windows Vistaに基づく）
  http://haraise.web.fc2.com/hyou.htm
@@ -58,6 +69,15 @@
 #define MINGLIU_CHAR 'L'
 #define N_MINCHO_CHAR 'N'
 #define ESTRANGELO_EDESSA 'E'
+#define GUJARATI_CHAR 'j'
+#define BENGAL_CHAR 'B'
+#define TAMIL_CHAR 'C'
+#define LAOO_CHAR 'e'
+#define GURMUKHI_CHAR 'f'
+#define KANNADA_CHAR 'k'
+#define THAANA_CHAR 'h'
+#define MALAYALAM_CHAR 'i'
+#define TELUGU_CHAR 'I'
 #define ZERO_WIDTH_CHAR 'Z'
 
 /* コメントアウトは参考資料による定義 */
@@ -71,14 +91,14 @@ static const Uint8 UNITABLE[] =
 /*0400*/ "A------------A------------------------------------------------------------------A------------A-----------------------------------------AAAAAAAAA-----------------------------------------------------AA--AA--AAA----------------------------AA--------AA--AAAAAA"
 /*0500*/ "AAAAAAAAAAAAAAAAAAAA......AAAA...................TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT..TTTTTTT.TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT.TT......AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA........AAAAAAAAAAAAAAAAAAAAAAAAAAA.....AAAAA..........."
 /*0600*/ "AAAA.......AAAAAAAAAAA.....A..AA.AAAAAAAAAAAAAAAAAAAAAAAAAA.....AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-/*0700*/ "EEEEEEEEEEEEEE.EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE..EEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.................................................................................................................................................."
+/*0700*/ "EEEEEEEEEEEEEE.EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE..EEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA..................hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh.............................................................................."
 /*0800*/ "................................................................................................................................................................................................................................................................"
-/*0900*/ ".DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD..DDDDDDDDDDDDDDDDDD..DDDDD...DDDDDDDDDDDDDDDDDDDDDDDDDDD........DDDDD..................................................................................................................--............"
-/*0a00*/ "................................................................................................................................................................................................................................................................"
-/*0b00*/ "................................................................................................................................................................................................................................................................"
-/*0c00*/ "................................................................................................................................................................................................................................................................"
-/*0d00*/ "................................................................................................................................................................................................................................................................"
-/*0e00*/ ".TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT....-TTTTTTTTTTTTTTTTTTTTTTTTTTTT...................................................................................................................................................................."
+/*0900*/ ".DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD..DDDDDDDDDDDDDDDDDD..DDDDD...DDDDDDDDDDDDDDDDDDDDDDDDDDD........DDDDD.BBB.BBBBBBBB..BB..BBBBBBBBBBBBBBBBBBBBBB.BBBBBBB.B...BBBB..BBBBBBBBB..BB..BBBB........B....BB.BBBBB..BBBBBBBBBBBBBBBBBBBBB....."
+/*0a00*/ ".fff.ffffff....ff..ffffffffffffffffffffff.fffffff.ff.ff.ff..f.fffff....ff..fff...f.......ffff.f.......ffffffffffffffff...........jjj.jjjjjjjjj.jjj.jjjjjjjjjjjjjjjjjjjjjj.jjjjjjj.jj.jjjjj..jjjjjjjjjj.jjj.jjj..j...............jjjj..jjjjjjjjjjjj.............."
+/*0b00*/ "..................................................................................................................................CC.CCCCCC...CCC.CCCC...CC...CC...CC...CCC...CCCCCCCCCCCC....CCCCC...CCC.CCCC..C......C..............CCCCCCCCCCCCCCCCCCCCC....."
+/*0c00*/ ".III.IIIIIIII.III.IIIIIIIIIIIIIIIIIIIIIII.IIIIIIIIII.IIIII...IIIIIIII.III.IIII.......II.II......IIII..IIIIIIIIII........IIIIIIII..kk.kkkkkkkk.kkk.kkkkkkkkkkkkkkkkkkkkkkk.kkkkkkkkkk.kkkkk..kkkkkkkkk.kkk.kkkk.......kk.......k.kkkk..kkkkkkkkkk.kk............."
+/*0d00*/ "..ii.iiiiiiii.iii.iiiiiiiiiiiiiiiiiiiiiii.iiiiiiiiiiiiiiii...iiiiiiii.iii.iiii.........i........iiii..iiiiiiiiiiiiiiii...iiiiiii................................................................................................................................"
+/*0e00*/ ".TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT....-TTTTTTTTTTTTTTTTTTTTTTTTTTTT.....................................ee.e..ee.e..e......eeee.eeeeeee.eee.e.e..ee.eeeeeeeeeeeee.eee..eeeee.e.eeeeee..eeeeeeeeee..eeee................................"
 /*0f00*/ "................................................................................................................................................................................................................................................................"
 /*       "0               1               2               3               4               5               6               7               8               9               a               b               c               d               e               f               "*/
 /*       "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"*/
@@ -169,7 +189,7 @@ static const Uint8 UNITABLE[] =
 /*5c00*/ "s--s--------s---s-s-ss-sss-sss-s-s-s-sss-ssss-sss-ssssss----------sss--s-s--s-----s-s-ssssssss-s--ss--ssssss-s--s-ssss-ss-ssssssssssssssssss-sss--ss-ssssssssssss-ssss-s--s--ssss-s-ss---s---s-ssssss-s-sssssssssssssssss-ssssss--ssssss---ss-s--ssss--sss--s-ss"
 /*5d00*/ "sssssss-sss-ss-ss-ss--------sss-ss-ssss-s-ssssssssssssssssssssssss-ssssssss--s-s-s--ssssssss-ssssssssssss-ss--s-sss-ss-sssssssssss-s-ss-sss--sss-ssssssssssss-ssss-sssssssss-s-ssssssss----s--sssssssssss-ss--ss-s--ss-ssss-s--ss-s-s----ss-ss-ss-----s-sss-s--s"
 /*5e00*/ "ss--ss-ssss--ssss-ssss-ss---s-sssssss-sssss-s-s--ss-ss---ssss-ss-ss---s-ssss-s-sssss--s-sssssss-s----sssssssssssss-----s--------s-s--ss-ss-ssss-sssss---ss-s-sss-sssss--sss-s-sssssss----ssssssss---ssss---ssss--ss-ss-sss--s-s-----ssss--ss-sss--s--s---s---s--"
-/*5f00*/ "s-s--ssss-----s---s------ss-sss-s-sss---s-sss-s-s-ss--s--sss-s-ss-sss-ss-s-s-s-ss-s-ss--s-ss--sss--sss--s-----ss--s-sss-s-ss-ss-------s--s---sss----sss---ssss-s--ssssss---ss--ssss--ss-s-ss--sssss-s-ssssss--ssssssss----ss---s-sss-ssssss-ssss-sss-ssssss-ssss"
+/*5f00*/ "s-s--ssss-----s---s------ss-sss-s-sss---s-sss-s-s-ss--s--sss-s-ss-sss-ss-s-s-s-ss-s-ss--s-ss--sss--sss--s-----ss--s-sss-s-ss-ss-------s--s---sss----sss---ssss-s--ssssss---ss--ssss--ss-s-ss--sssss-s-ssssss--ssssssss----ss---s-sss-ssssss-ssss--sss-ss-ss-s-s-"
 /*       "0               1               2               3               4               5               6               7               8               9               a               b               c               d               e               f               "*/
 /*       "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"*/
 /*6000*/ "ssssssssssssss---s-ss--ss-s---ss--sss-------sss-s-ssssssss-ssssss---ss-sss--s-ss-s-ss-sss--ss-s--s----ss------s--ssss-s-sssssssss-s---sss-----ssss-s-s--ss--sss--ss-ss--s--sssssss-----s-sss--sssssss---sssssssss-s-s-ss-s-s-s----s-sss--sssssss-----s--s---ssss"
@@ -359,25 +379,25 @@ static const Uint8 UNITABLE[] =
 0080-00ff ラテン１補助
 0100-024f ラテン拡張A,B IPA拡張 スペース調整
 0300-036f 結合分音記号		■check■
-0370-03ff ギリシャコプト	■check■
+0370-03ff ギリシャコプト	(arial)
 0400-052f キリル        	■check■
-0530-058f アルメニア    	■check■
-0590-05ff ヘブライ      	■check■
-0600-06ff アラビア      (tahoma.ttf)
+0530-058f アルメニア   (tahoma.ttf)
+0590-05ff ヘブライ    (arial.ttf)
+0600-06ff アラビア     (arial.ttf)
 0700-077f シリア        estrangelo edessa
-0780-08ff ターナ        	■check■
+0780-08ff ターナ    mvboli.ttf
 0900-097f テバナガリ    mangal.ttf
-0980-09ff ベンガル      	■check■
-0a00-0a7f グルムキー    	■check■
-0a80-0aff クジャラート  	■check■
+0980-09ff ベンガル      vrinda.ttf または　shonar.ttf
+0a00-0a7f グルムキー   raavi.ttf
+0a80-0aff クジャラート  shruti.ttf
 0b00-0b7f オリヤー      	■check■
-0b80-0bff タミール      	■check■
-0c00-0c7f テルグ        	■check■
-0c80-0cff カナラ        	■check■
-0d00-0d7f マラヤラム    	■check■
+0b80-0bff タミール     latha.ttf
+0c00-0c7f テルグ      gautami.ttf
+0c80-0cff カナラ      tunga.ttf
+0d00-0d7f マラヤラム    kartika.ttf
 0d80-0dff シンハラ      	■check■
 0e00-0e7f タイ          tahoma.ttf
-0e80-0eff ラオス        	■check■
+0e80-0eff ラオス       laoui.ttf
 0f00-0fff チベット      	■check■
 1000-109f ミャンマーMSゴシック不可	■check■
 10a0-10ff グルジア		sylfaen.ttf
